@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'))
 
 client.setConfig({
-    apiKey: "d355a5761cd74d7ae0fe8e5faff12afc-us6",
+    apiKey: "<YOUR API KEY>",
     server: "us6",
   });
 
@@ -34,7 +34,7 @@ app.post('/', (req, res) => {
     const run = async () => {
         // Handle Exceptions
         try {
-            const response = await client.lists.batchListMembers("4e0b2f9100", {members: members,})
+            const response = await client.lists.batchListMembers("<AUDIENCE ID>", {members: members,})
             res.sendFile(`${__dirname}/success.html`);
         }
         catch (err) {
